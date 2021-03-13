@@ -1,14 +1,18 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<title>User Form</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>User Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body>
-  <form th:action="#{input}" th:method="post" th:object="${userForm}">
-    <input type="text" th:field="*{name}" />
+<div>
+    <span>セッションID: </span><span th:text="${sessionId}"></span>
+</div>
+<hr>
+<form th:action="#{input}" th:method="post" th:object="${userForm}">
+    <input type="text" th:field="*{name}"/>
     <button type="submit">submit</button>
-  </form>
+</form>
 </body>
 </html>

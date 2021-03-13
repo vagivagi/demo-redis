@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>User Form</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div>
+  <p>セッション削除完了</p>
+</div>
+<div>
+  <span>セッションID: </span><span th:text="${sessionId}"></span>
+</div>
+<hr>
+<div th:object="${userForm}" th:unless="${userForm} == null">
+  <p th:text="*{name}" th:unless="*{name} == null"/>
+  <p th:if="*{name} == null">セッションオブジェクトが初期化されているよ</p>
+</div>
+<p th:if="${userForm} == null">セッションオブジェクトが存在しないよ</p>
+<hr>
+<div>
+  <p>セッションオブジェクトの存在確認</p>
+  <a th:href="@{/user/detail}">入力直後のページに戻る</a>
+  <br>
+  <a th:href="@{/user/input}">入力ページに戻る</a>
+</div>
+</body>
+</html>
